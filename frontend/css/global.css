@@ -1,7 +1,10 @@
+@import url("../components/header/header.css");
+@import url("../components/footer/footer.css");
+
 * {
-  padding: 0px;
-  margin: 0px;
-  border: 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   font-weight: 400;
@@ -17,9 +20,11 @@
   --GasoekOne: "Gasoek One", sans-serif;
 }
 
-/* PADRAO */
-
-@import url(style1.css);
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+}
 
 .container {
   width: 100%;
@@ -28,101 +33,19 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 5.5rem 1.25rem 1fr;
+  grid-template-rows: 5.5rem 1.99rem 1fr auto;
   grid-template-areas:
     "cabecalho"
     "faixa-azul"
-    "conteudo";
+    "conteudo"
+    "rodape";
 }
 
-header {
-  grid-area: cabecalho;
-  position: relative;
-  width: 100%;
-  height: 5.5rem;
-  background-color: var(--azulEscuro);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 4vw;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: 0.2s ease;
-}
-
-.logo,
-.logo span {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-family: var(--GasoekOne);
-  font-size: 1.75rem;
-  color: var(--amarelo);
-  letter-spacing: 0.03rem;
-}
-
-.logo span {
-  transform: translateY(1rem); /* Desce o nome DaenaComu para o meio da logo */
-}
-
-.logo-img {
-  width: 6rem;
-  height: 6rem;
-  border-radius: 50%;
-  object-fit: cover;
-  transform: translateY(1rem);
-  z-index: 10;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  transform: translateY(1rem);
-}
-
-.link {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.04rem;
-}
-
-.link:hover {
-  color: var(--amarelo);
-}
-
-.botao {
-  background-color: var(--amarelo);
-  color: #000000;
-  font-size: 0.85rem;
-  font-weight: 800;
-  padding: 0.65rem 1.8rem;
-  border-radius: 999rem; /* Deixa o botão totalmente arredondado (pílula) */
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.35);
-}
-
-.botao:hover {
-  filter: brightness(0.92);
-}
-
-/* Faixa azul bem escura logo abaixo do cabeçalho */
-.faixa-azul {
-  grid-area: faixa-azul;
-  width: 100%;
-  height: 1.99rem;
-  background-color: #040f3d;
+daena-header,
+daena-footer {
+  display: contents;
 }
 
 main {
-  flex-grow: 1;
-}
-
-footer {
-  background-color: var(--azulEscuro);
-  width: 100%;
-  height: 5.5rem;
+  grid-area: conteudo;
 }

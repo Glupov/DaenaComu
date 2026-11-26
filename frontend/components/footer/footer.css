@@ -1,0 +1,117 @@
+footer.rodape {
+  grid-area: rodape;
+  background-color: var(--azulEscuro);
+  width: 100%;
+  padding: 3.5rem 4vw 2rem 4vw;
+  color: #ffffff;
+}
+
+.rodape-topo {
+  max-width: 75rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.logo-rodape {
+  font-family: var(--GasoekOne);
+  font-size: 1.5rem;
+  color: var(--amarelo);
+  letter-spacing: 0.03rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.rodape-marca p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  max-width: 22rem;
+}
+
+.rodape-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rodape-links a {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.rodape-links a:hover {
+  color: var(--amarelo);
+}
+
+.rodape-contato {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.email-contato {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.email-contato:hover {
+  color: var(--amarelo);
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* espaço entre a área clicavel entre os icones */
+.redes-sociais a {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* icones */
+.redes-sociais a img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.rodape-base {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 0.06rem solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.links-legais {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.links-legais a {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.links-legais a:hover {
+  color: #ffffff;
+}
