@@ -1,0 +1,51 @@
+@import url("../components/header/header.css");
+@import url("../components/footer/footer.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+:root {
+  --azulMaisEscuro: #030d33;
+  --azulEscuro: #071a61;
+  --azulClaro: #bcdbdf;
+  --azul: #2947b6;
+  --amarelo: #ffad41;
+
+  --GasoekOne: "Gasoek One", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 5.5rem 1.99rem 1fr auto;
+  grid-template-areas:
+    "cabecalho"
+    "faixa-azul"
+    "conteudo"
+    "rodape";
+}
+
+daena-header,
+daena-footer {
+  display: contents;
+}
+
+main {
+  grid-area: conteudo;
+}
