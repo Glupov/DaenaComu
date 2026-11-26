@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "unidades")
 @Getter
@@ -27,6 +29,9 @@ public class UnidadeModel extends BaseModel{
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id", nullable = false, referencedColumnName = "id")
     private EnderecoModel endereco;
+
+    @OneToMany(mappedBy = "unidade")
+    private Set<CursoModel> cursos;
 
 
 }

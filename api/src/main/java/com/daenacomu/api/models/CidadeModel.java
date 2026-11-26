@@ -27,5 +27,6 @@ public class CidadeModel extends BaseModel {
     private EstadoModel estado;
 
     @OneToMany(mappedBy = "cidade")
-    private Set<UnidadeModel> unidades;
+    private Set<EnderecoModel> enderecos;
+
 }
