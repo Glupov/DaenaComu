@@ -44,10 +44,10 @@ public class PostagemModel extends BaseModel {
     @JoinColumn(name = "curso_id")
     private CursoModel curso;
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "postagem")
     private Set<PostComentarioModel> comentarios;
 
-    @OneToMany(mappedBy = "post")
+    @OneToMany(mappedBy = "postagem")
     private Set<PostCurtidaModel> curtidas;
 
 }

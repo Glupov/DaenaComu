@@ -21,7 +21,7 @@ public class PostCurtidaModel {
     @ManyToOne
     @MapsId("postId")
     @JoinColumn(name = "post_id", nullable = false)
-    private PostagemModel post;
+    private PostagemModel postagem;
 
     @ManyToOne
     @MapsId("usuarioId")
