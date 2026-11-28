@@ -3,6 +3,7 @@ package com.daenacomu.api.services;
 import com.daenacomu.api.dto.requests.RegistroCompletoRequest;
 import com.daenacomu.api.dto.requests.RegistroRequest;
 import com.daenacomu.api.dto.requests.LoginRequest;
+import com.daenacomu.api.dto.responses.LoginResponse;
 import com.daenacomu.api.dto.responses.UsuarioResponse;
 import com.daenacomu.api.mappers.UsuarioMapper;
 import com.daenacomu.api.models.UsuarioModel;
@@ -17,11 +18,13 @@ public class AuthService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioMapper usuarioMapper;
     private final PasswordEncoder passwordEncoder;
+    private final JwtService jwtService;
 
-    public AuthService(UsuarioRepository usuarioRepository, UsuarioMapper usuarioMapper, PasswordEncoder passwordEncoder) {
+    public AuthService(UsuarioRepository usuarioRepository, UsuarioMapper usuarioMapper, PasswordEncoder passwordEncoder, JwtService jwtService) {
         this.usuarioRepository = usuarioRepository;
         this.usuarioMapper = usuarioMapper;
         this.passwordEncoder = passwordEncoder;
+        this.jwtService = jwtService;
     }
 
     @Transactional
@@ -38,15 +41,15 @@ public class AuthService {
         return usuarioMapper.toUsuarioResponse(salvo);
     }
     @Transactional
-    public UsuarioResponse login(LoginRequest request) {
+    public LoginResponse login(LoginRequest request) {
         UsuarioModel usuario = usuarioRepository.findByEmail(request.email())
                 .orElseThrow(() -> new IllegalArgumentException("E-mail ou senha inválidos."));
-
+        String token = jwtService.gerarAccessToken(usuario);
         if (!passwordEncoder.matches(request.senha(), usuario.getSenha())) {
             throw new IllegalArgumentException("E-mail ou senha inválidos.");
         }
 
-        return usuarioMapper.toUsuarioResponse(usuario);
+        return new LoginResponse(token, usuarioMapper.toUsuarioResponse(usuario));
     }
     @Transactional
     public UsuarioResponse completarRegistro(RegistroCompletoRequest request, String email) {
