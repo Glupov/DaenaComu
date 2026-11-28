@@ -1,4 +1,4 @@
-package com.daenacomu.api.config;
+package com.daenacomu.api.security;
 
 import com.daenacomu.api.models.UsuarioModel;
 import com.daenacomu.api.repositories.UsuarioRepository;
